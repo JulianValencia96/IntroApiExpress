@@ -1,6 +1,8 @@
 import express,{Application, Request, Response, NextFunction} from 'express'
+import passport, { initialize } from 'passport'
 import rutas_ejemplo from './routes/rutas_ejemplo'
 import rutas_auth from  './routes/authRoutes'
+import miEstrategia from './config/passport'
 
 import dotenv from 'dotenv'
 dotenv.config()
@@ -12,8 +14,11 @@ const app:Application= express()
 //1.1 Emplear las rutas
 
 app.use('/auth', rutas_auth)
-app.use('/', rutas_ejemplo)
+/*passport.use(miEstrategia)
+app.use(passport.initialize())
+app.use('/', passport.authenticate('jwt', {session:false}), rutas_ejemplo)
 
+*/
 
 //2. Respuesta cuando el recurso no existe
 
