@@ -5,6 +5,7 @@ const opts={
     secretOrKey: process.env.SECRET_KEY
 }
 
+//Creando objeto
 const miEstrategia:Strategy=new Strategy(
     opts, (payload, done)=>{
 

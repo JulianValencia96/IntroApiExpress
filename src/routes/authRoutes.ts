@@ -29,7 +29,7 @@ router.get(
             expiresIn:"2h"
         }
         const secretKey= process.env.SECRET_KEY
-
+//Validacion token
         if(typeof secretKey == 'string'){
             const token = jwt.sign(payload, secretKey, options)
             res.json({token})

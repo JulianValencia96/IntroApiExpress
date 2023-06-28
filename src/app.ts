@@ -14,11 +14,9 @@ const app:Application= express()
 //1.1 Emplear las rutas
 
 app.use('/auth', rutas_auth)
-/*passport.use(miEstrategia)
+passport.use(miEstrategia)
 app.use(passport.initialize())
 app.use('/', passport.authenticate('jwt', {session:false}), rutas_ejemplo)
-
-*/
 
 //2. Respuesta cuando el recurso no existe
 
